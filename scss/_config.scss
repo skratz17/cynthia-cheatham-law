@@ -1,0 +1,15 @@
+$light-color: #f4f4f4;
+$medium-color: #ccc;
+$dark-color: #333;
+$primary-color: #355e3b;
+$secondary-color: #2c7837;
+$max-width: 1100px;
+
+@function set-text-color($background-color) {
+  @if(lightness($background-color) > 50) {
+    @return #000;
+  }
+  @else {
+    @return #fff;
+  }
+}

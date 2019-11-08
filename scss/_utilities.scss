@@ -1,0 +1,15 @@
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  overflow: hidden;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.current {
+  background-color: $primary-color;
+  color: set-text-color($primary-color);
+}
