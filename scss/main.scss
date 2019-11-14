@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 // Core styles
@@ -23,22 +24,28 @@ ul {
   list-style: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/** 
+  SHARED COMPONENT STYLES
+*/
+
 // Main nav
 #main-nav {
-  padding: 2rem 0;
   background: #fff;
 
   .nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
 
     .logo {
       font-size: 2.4rem;
 
       p:last-child {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
       }
     }
 
@@ -48,7 +55,7 @@ ul {
       li a {
         padding: 1rem 1rem;
         font-size: 1.2rem;
-        transition: background-color 250ms;
+        transition: background-color 0.5s;
 
         &:hover {
           background-color: $medium-color;
@@ -57,6 +64,8 @@ ul {
         }
 
         &.current:hover {
+          background-color: $secondary-color;
+          color: set-text-color($secondary-color);
           opacity: 0.9;
         }
       }
@@ -66,8 +75,7 @@ ul {
 
 // Main footer
 #main-footer {
-  background: $medium-color;
-  padding: 1rem 0;
+  background: $light-color;
 
   .footer-content {
     display: grid;
@@ -80,7 +88,189 @@ ul {
     }
 
     h3 {
-      margin-bottom: 0.5rem;
+      margin: 0.5rem 0;
     }
   }
+}
+
+/**
+  HOMEPAGE STYLES
+*/
+
+// Showcase
+#header-main {
+  .showcase {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url('../img/showcase.jpg') no-repeat center center / cover;
+      opacity: 0.5;
+    }
+
+    &-content {
+      padding: 5rem;
+      z-index: 1
+    }
+  }
+}
+
+// Section: Homepage Who We Are
+#who {
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 1rem;
+  align-items: center;
+  
+  .who-text {
+    p {
+      margin: 0.75rem 0;
+    }
+  }
+
+  .who-img {
+    background: url('../img/office.png') no-repeat center center / cover;
+    height: 100%;
+  }
+}
+
+// Section: Homepage Practice Areas
+#practice-areas {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+
+    *:first-child {
+      grid-column: 1 / span 3;
+    }
+
+    .practice-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      i {
+        color: #fff;
+        background: $primary-color;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        transition: all 1.5s;
+
+        &:hover {
+          background: $secondary-color;
+          transform: scale(1.05);
+        }
+      }
+
+      h3 {
+        margin: 0.3rem 0;
+      }
+
+      a {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+// Section: Homepage Credentials
+#credentials {
+  background: $medium-color;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .credential {
+    img {
+      width: 60%;
+    }
+  }
+}
+
+/**
+  ABOUT PAGE STYLES
+*/
+
+// Section: Attorneys
+#attorneys {
+  background: $medium-color;
+
+  .attorney {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 1rem;
+    background: $light-color;
+    margin: 2rem 0;
+
+    &-img {
+      width: 60%;
+      display: block;
+      margin: 0.5rem auto;
+      border-radius: 50%;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// Section: Testimoninals
+#testimonials {
+  background: $primary-color;
+  color: set-text-color($primary-color);
+
+  h2 {
+    padding-top: 1rem;
+  }
+
+  .testimonials-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+
+    .testimonial {
+      position: relative;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-content {
+        padding: 1rem 0;
+      }
+
+      &-attribution {
+        text-align: right;
+        font-style: italic;
+      }
+    }
+  }
+
+
 }
