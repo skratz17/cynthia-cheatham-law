@@ -7,8 +7,23 @@
 .text-primary {
   color: #355e3b; }
 
+.text-secondary {
+  color: #2c7837; }
+
+.text-light {
+  color: #f4f4f4; }
+
+.text-medium {
+  color: #ccc; }
+
+.text-dark {
+  color: #333; }
+
+.italics {
+  font-style: italic; }
+
 .current {
-  background-color: #355e3b;
+  background-color: #2c7837;
   color: #fff; }
 
 .l-heading {
@@ -138,6 +153,46 @@
 .line-light {
   background: #f4f4f4; }
 
+#main-nav .nav-content ul li.dropdown span, #main-nav .nav-content ul li a, #main-nav .nav-content ul li.dropdown:hover ul.dropdown-content li a {
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
+  transition: background-color 0.5s; }
+  #main-nav .nav-content ul li.dropdown span:hover, #main-nav .nav-content ul li a:hover, #main-nav .nav-content ul li.dropdown:hover ul.dropdown-content li a:hover {
+    background-color: #ccc;
+    color: #000;
+    opacity: 0.9; }
+  #main-nav .nav-content ul li.dropdown span.current:hover, #main-nav .nav-content ul li a.current:hover, #main-nav .nav-content ul li.dropdown:hover ul.dropdown-content li a.current:hover {
+    background-color: #2c7837;
+    color: #fff;
+    opacity: 0.9; }
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  padding: 1rem; }
+  .card > *:first-child {
+    flex: 1;
+    margin-right: 0.5rem; }
+  .card > *:last-child {
+    flex: 9; }
+  .card .card-text {
+    margin-top: 0.5rem; }
+
+.list li {
+  border-bottom: 1px dotted #ccc; }
+  .list li:last-child {
+    border-bottom: none; }
+  .list li a, .list li p {
+    display: inline-block;
+    padding: 0.6rem 0;
+    transition: opacity 0.5s; }
+    .list li a:hover, .list li p:hover {
+      opacity: 0.8; }
+
 * {
   margin: 0;
   padding: 0;
@@ -163,6 +218,8 @@ h1, h2, h3, h4, h5, h6 {
 */
 #main-nav {
   background: #fff; }
+  #main-nav .container {
+    overflow: visible; }
   #main-nav .nav-content {
     display: flex;
     justify-content: space-between;
@@ -173,18 +230,26 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.5rem; }
     #main-nav .nav-content ul {
       display: flex; }
-      #main-nav .nav-content ul li a {
-        padding: 1rem 1rem;
-        font-size: 1.2rem;
-        transition: background-color 0.5s; }
-        #main-nav .nav-content ul li a:hover {
-          background-color: #ccc;
-          color: #000;
-          opacity: 0.9; }
-        #main-nav .nav-content ul li a.current:hover {
-          background-color: #2c7837;
-          color: #fff;
-          opacity: 0.9; }
+      #main-nav .nav-content ul li.dropdown {
+        position: relative; }
+        #main-nav .nav-content ul li.dropdown ul.dropdown-content {
+          display: none; }
+        #main-nav .nav-content ul li.dropdown:hover ul.dropdown-content {
+          display: block;
+          position: absolute;
+          left: 0;
+          text-align: left;
+          min-width: 300px;
+          z-index: 1;
+          margin-top: 0.8rem;
+          background: #fff; }
+          #main-nav .nav-content ul li.dropdown:hover ul.dropdown-content li {
+            display: block;
+            border-bottom: 1px dotted #ccc; }
+            #main-nav .nav-content ul li.dropdown:hover ul.dropdown-content li:last-child {
+              border-bottom: none; }
+            #main-nav .nav-content ul li.dropdown:hover ul.dropdown-content li a {
+              display: block; }
 
 #main-footer {
   background: #f4f4f4; }
@@ -315,3 +380,25 @@ h1, h2, h3, h4, h5, h6 {
       #testimonials .testimonials-wrapper .testimonial-attribution {
         text-align: right;
         font-style: italic; }
+
+/**
+  SHARED PRACTICE AREA PAGE STYLINGS
+*/
+.practice-area-page {
+  background: #355e3b;
+  color: #fff; }
+  .practice-area-page a {
+    color: #fff; }
+
+.practice-area-content-wrapper {
+  display: grid;
+  grid-template-areas: 'main main sidebar' 'main main sidebar';
+  grid-gap: 2rem; }
+  .practice-area-content-wrapper #family-law, .practice-area-content-wrapper #social-security-disability, .practice-area-content-wrapper #personal-injury {
+    grid-area: main; }
+  .practice-area-content-wrapper #sidebar {
+    grid-area: sidebar;
+    margin-top: 1.5rem;
+    max-width: 250px; }
+  .practice-area-content-wrapper div.card {
+    margin: 2rem 0; }

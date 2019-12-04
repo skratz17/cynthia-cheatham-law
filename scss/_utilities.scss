@@ -5,13 +5,19 @@
   overflow: hidden;
 }
 
-.text-primary {
-  color: $primary-color;
+.text-primary { color: $primary-color; }
+.text-secondary { color: $secondary-color; }
+.text-light { color: $light-color; }
+.text-medium { color: $medium-color; }
+.text-dark { color: $dark-color; }
+
+.italics {
+  font-style: italic;
 }
 
 .current {
-  background-color: $primary-color;
-  color: set-text-color($primary-color);
+  background-color: $secondary-color;
+  color: set-text-color($secondary-color);
 }
 
 .l-heading { font-size: 3.5rem; }
@@ -112,4 +118,66 @@
 .line-light {
   @extend %line;
   background: $light-color;
+}
+
+// styling for lis that are used as links/nav
+%list-item-style {
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: $medium-color;
+    color: set-text-color($medium-color);
+    opacity: 0.9;
+  }
+
+  &.current:hover {
+    background-color: $secondary-color;
+    color: set-text-color($secondary-color);
+    opacity: 0.9;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: set-text-color(#fff);
+  border-radius: 5px;
+  padding: 1rem;
+
+  & > *:first-child {
+    flex: 1;
+    margin-right: 0.5rem;
+  }
+
+  & > *:last-child {
+    flex: 9;
+  }
+
+  .card-text {
+    margin-top: 0.5rem;
+  }
+}
+
+.list {
+  li {
+    border-bottom: 1px dotted $medium-color;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    a, p {
+      display: inline-block;
+      padding: 0.6rem 0;
+      transition: opacity 0.5s;
+  
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }
