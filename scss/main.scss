@@ -100,6 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 // Main footer
 #main-footer {
   background: $light-color;
+  padding-bottom: 0.2rem;
 
   .footer-content {
     display: grid;
@@ -260,6 +261,11 @@ h1, h2, h3, h4, h5, h6 {
       h3 {
         font-size: 1.5rem;
       }
+
+      h5 {
+        color: #777;
+        text-transform: uppercase;
+      }
     }
   }
 }
@@ -298,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
-  SHARED PRACTICE AREA PAGE STYLINGS
+  SHARED PRACTICE AREA PAGE STYLES
 */
 .practice-area-page {
   background: $primary-color;
@@ -328,5 +334,122 @@ h1, h2, h3, h4, h5, h6 {
 
   div.card {
     margin: 2rem 0;
+  }
+}
+
+/**
+  MEDIA PAGE STYLES
+*/
+
+//Section: YouTube Player
+#youtube-player {
+  h2 {
+    padding-bottom: 1rem;
+  }
+
+  .video-button-column {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .video-button {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-areas:
+      'column-left player column-right';
+  }
+
+  #column-left {
+    grid-area: column-left;
+  }
+
+  #player {
+    grid-area: player;
+  }
+
+  #column-right {
+    grid-area: column-right;
+  }
+}
+
+// Section: News Articles
+#news-articles { 
+  background-color: $primary-color;
+  color: set-text-color($primary-color);
+
+  h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .news-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+
+    .card-icon {
+      align-self: flex-start;
+
+      img {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    .card-content {
+      .card-heading {
+        line-height: 1.1;
+        margin-bottom: 0.25rem;
+      }
+
+      .card-text {
+        margin-bottom: 0.7rem;
+      }
+    }
+  }
+}
+
+// Section: Academic and Professional Papers
+#academic-papers {
+  .academic-papers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .list {
+    li {
+      padding: 0.6rem;
+    }
+  }
+}
+
+#contact {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1rem;
+
+  .map {
+    height: 500px;
+    width: 100%;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+
+    & > * {
+      padding: 0.75rem;
+    }
   }
 }

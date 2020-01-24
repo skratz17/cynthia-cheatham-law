@@ -107,7 +107,7 @@
 %line {
   height: 2px;
   width: 4rem;
-  margin: 0.75rem auto;
+  margin: 0.3rem auto;
 }
 
 .line-primary {
@@ -141,7 +141,7 @@
 
 .card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background-color: #fff;
   color: set-text-color(#fff);
