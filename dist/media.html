@@ -15,14 +15,36 @@
   <!-- Main Navbar -->
   <nav id="main-nav" class="py-1">
 
+    <!-- Hamburger Menu (Mobile Nav) -->
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler">
+      <div class="hamburger"><div></div></div>
+      <div class="menu">
+        <div>
+          <div>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="family-law.html">Family Law</a></li>
+              <li><a href="social-security-disability.html">Social Security &amp; Disability</a></li>
+              <li><a href="personal-injury.html">Personal Injury</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link List (Desktop Nav) -->
     <div class="container">
       <div class="nav-content text-center">
-        <div class="logo">
+        <h1 class="logo">
           <a href="index.html">
             <p class=""><span class="text-primary">Cynthia A.</span> Cheatham</p>
             <p>Family Law</p>
           </a>
-        </div>
+        </h1>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
@@ -72,6 +94,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-heading m-heading text-primary"><a href="https://fox17.com/news/ferrier-files/ferrier-files-domestic-violence-victim-mother-of-3-evicted-from-ywca" target="_blank" rel="noopener noreferrer">FERRIER FILES: Domestic violence victim, mother of 3 evicted from YWCA</a></h3>
+            <h5 class="text-center">Fox 17 Nashville</h5>
             <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos saepe cupiditate totam, veritatis ex ipsum veniam debitis a aperiam numquam, aspernatur delectus, aut eligendi voluptates?</p>
             <a href="https://fox17.com/news/ferrier-files/ferrier-files-domestic-violence-victim-mother-of-3-evicted-from-ywca" class="btn-dark" target="_blank" rel="noopener noreferrer">Read More</a>
           </div>
@@ -82,6 +105,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-heading m-heading text-primary"><a href="https://www.usatoday.com/story/news/nation/2013/10/13/tennessee-adoption-woes-special-needs-children/2977289/" target="_blank" rel="noopener noreferrer">Families fight Tenn. child agency for information</a></h3>
+            <h5 class="text-center">USA Today</h5>
             <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos saepe cupiditate totam, veritatis ex ipsum veniam debitis a aperiam numquam, aspernatur delectus, aut eligendi voluptates?</p>
             <a href="https://www.usatoday.com/story/news/nation/2013/10/13/tennessee-adoption-woes-special-needs-children/2977289/" class="btn-dark" target="_blank" rel="noopener noreferrer">Read More</a>
           </div>
@@ -92,6 +116,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-heading m-heading text-primary"><a href="https://100r.org/2016/12/custody-2/" target="_blank" rel="noopener noreferrer">Custody in Crisis: How Family Courts Nationwide Put Children in Danger</a></h3>
+            <h5 class="text-center">100 Reporters</h5>
             <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos saepe cupiditate totam, veritatis ex ipsum veniam debitis a aperiam numquam, aspernatur delectus, aut eligendi voluptates?</p>
             <a href="https://100r.org/2016/12/custody-2/" class="btn-dark" target="_blank" rel="noopener noreferrer">Read More</a>
           </div>
@@ -102,6 +127,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-heading m-heading text-primary"><a href="https://fox17.com/news/local/watch-some-think-davidson-county-judge-went-too-far-in-courtroom" target="_blank" rel="noopener noreferrer">Some think Davidson County Judge went too far in courtroom</a></h3>
+            <h5 class="text-center">Fox 17 Nashville</h5>
             <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos saepe cupiditate totam, veritatis ex ipsum veniam debitis a aperiam numquam, aspernatur delectus, aut eligendi voluptates?</p>
             <a href="https://fox17.com/news/local/watch-some-think-davidson-county-judge-went-too-far-in-courtroom" class="btn-dark" target="_blank" rel="noopener noreferrer">Read More</a>
           </div>
@@ -112,6 +138,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-heading m-heading text-primary"><a href="http://www.abajournal.com/news/article/were_divorce_lawyers_reasons_for_trying_to_recuse_3_judges_in_one_case_friv/" target="_blank" rel="noopener noreferrer">Were Divorce Lawyer's Reasons for Seeking Recusal of 3 Judges in One Case Frivolous?</a></h3>
+            <h5 class="text-center">ABA Journal</h5>
             <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos saepe cupiditate totam, veritatis ex ipsum veniam debitis a aperiam numquam, aspernatur delectus, aut eligendi voluptates?</p>
             <a href="http://www.abajournal.com/news/article/were_divorce_lawyers_reasons_for_trying_to_recuse_3_judges_in_one_case_friv/" class="btn-dark" target="_blank" rel="noopener noreferrer">Read More</a>
           </div>
@@ -195,44 +222,10 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a292ce8ab6.js" crossorigin="anonymous"></script>
   
-  <!-- YouTube API Code -->
-  <script>
-    var tag = document.createElement('script');
+  <!-- YouTube API Code and Event Listeners for Video Cueing -->
+  <script src="js/youtube.js"></script>
 
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: '390',
-        width: '640',
-        videoId: '5Cl6AXq2DpA'
-      });
-    }
-  </script>
-
-  <!-- Setup event listeners -->
-  <script>
-    var changeVideo = function(videoId) {
-      var url = 'https://www.youtube.com/v/' + videoId + '?version=3';
-      player.loadVideoByUrl(url);
-    };
-
-    var buttons = document.querySelectorAll('.video-button');
-    buttons.forEach(function(b) {
-      b.onclick = function() {
-        var selected = document.querySelector('.btn-medium');
-        selected.classList.remove('btn-medium');
-        selected.classList.add('btn-dark');
-
-        changeVideo(b.dataset.videoid);
-
-        b.classList.remove('btn-dark');
-        b.classList.add('btn-medium');
-      }
-    });
-  </script>
+  <!-- Scroll Listener -->
+  <script src="js/scrollListener.js"></script>
 </body>
 </html>

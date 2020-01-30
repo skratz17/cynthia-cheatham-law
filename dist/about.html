@@ -14,14 +14,37 @@
 <body>
   <!-- Main Navbar -->
   <nav id="main-nav" class="py-1">
+
+    <!-- Hamburger Menu (Mobile Nav) -->
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler">
+      <div class="hamburger"><div></div></div>
+      <div class="menu">
+        <div>
+          <div>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="family-law.html">Family Law</a></li>
+              <li><a href="social-security-disability.html">Social Security &amp; Disability</a></li>
+              <li><a href="personal-injury.html">Personal Injury</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link List (Desktop Nav) -->
     <div class="container">
       <div class="nav-content text-center">
-        <div class="logo">
+        <h1 class="logo">
           <a href="index.html">
             <p class=""><span class="text-primary">Cynthia A.</span> Cheatham</p>
             <p>Family Law</p>
           </a>
-        </div>
+        </h1>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" class="current">About Us</a></li>
@@ -39,14 +62,14 @@
     </div>
   </nav>
 
-  <div class="container text-center py-1">
+  <section id="about-main" class="container text-center">
     <h1 class="l-heading">
       <span class="text-primary">About</span> Cynthia Cheatham Law
     </h1>
-    <p class="py-1">
+    <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, repudiandae? Molestias iste cupiditate consectetur commodi nostrum esse dolorum culpa perferendis at! Debitis molestiae inventore recusandae ducimus voluptate ipsa aperiam adipisci asperiores eveniet, consequatur iste culpa assumenda. Minima delectus eaque earum unde nam sed ipsum obcaecati illo cupiditate doloribus animi distinctio repudiandae, ipsa similique dicta? Labore qui possimus aperiam dignissimos, laudantium accusantium pariatur magnam atque itaque aliquid, natus voluptas soluta esse corrupti at. Necessitatibus reiciendis iure sit quia vel, voluptates fuga ad! Dignissimos alias quaerat laudantium a molestiae blanditiis cupiditate. Blanditiis atque similique molestias beatae ducimus porro consequatur esse possimus illum?
     </p>
-  </div>
+  </section>
 
   <!-- Section: Attorneys -->
   <section id="attorneys" class="py-1">
@@ -143,5 +166,8 @@
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a292ce8ab6.js" crossorigin="anonymous"></script>
+
+  <!-- Scroll Listener -->
+  <script src="js/scrollListener.js"></script>
 </body>
 </html>

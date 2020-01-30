@@ -1,0 +1,279 @@
+// Tablets
+@media(max-width: 768px) {
+  // grid resets
+  #who,
+  #contact {
+    grid-template-columns: 1fr;
+  }
+
+  // Section: Main Nav
+  #main-nav {
+    .menu-wrap {
+      display: block;
+    }
+
+    .nav-content {
+      justify-content: center;
+
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  // Section: Homepage Who Are We
+  #who {
+    .who-img {
+      display: none;
+    }
+  }
+
+  // Section: Media Page YouTube Player
+  #youtube-player {
+    .container {
+      grid-template-areas:
+        'player player'
+        'column-left column-right';
+      grid-gap: 0;
+    }
+
+    .video-button-column {
+      justify-content: space-between;
+
+      .video-button {
+        width: 250px;
+      }
+    }
+
+    #player {
+      margin-bottom: 1rem;
+    }
+  }
+
+  // Section: Media Page News Articles
+  #news-articles {
+    .news-articles-grid {
+      text-align: center;
+
+      .card-icon {
+        display: none;
+      }
+
+      .card-content {
+        h5 {
+          display: block;
+          font-size: 1.1rem;
+          color: #777;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+// Smartphones
+@media(max-width: 500px) {
+  // Utility resets
+  .l-heading { font-size: 2.5rem; }
+  .m-heading { font-size: 2rem; }
+  .s-heading { font-size: 1.5rem; }
+
+  .card {
+    text-align: center;
+  }
+
+  .card .card-icon {
+    display: none;
+  }
+
+  #main-nav {
+    .container {
+      overflow: hidden;
+    }
+  }
+
+  // Stack grids
+  #main-footer .footer-content,
+  #practice-areas .container,
+  #testimonials .testimonials-wrapper,
+  #attorneys .attorney,
+  #news-articles .news-articles-grid,
+  #academic-papers .academic-papers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // Reset grid column overrides
+  #main-footer .footer-content div:last-child,
+  #practice-areas .container *:first-child {
+    grid-column: 1;
+  }
+
+  // Main footer
+  #main-footer {
+    .footer-content {
+      div {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #ccc;
+      }
+
+      div:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /**
+    HOMEPAGE STYLES
+  */
+
+  // Section: Homepage Practice Areas
+  #practice-areas {
+    .container {
+      .practice-area {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 2rem;
+      }
+
+      .practice-area:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .practice-area-content {
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 1fr 3fr;
+
+        i {
+          grid-row: 1 / span 2;
+        }
+
+        *:last-child {
+          margin: 0 auto;
+          grid-column: 2;
+        }
+      }
+    }
+  }
+
+  // Section: Homepage Credentials
+  #credentials {
+    grid-template-columns: repeat(3, 1fr);
+
+    .credential {
+      img {
+        width: 50%;
+      }
+    }
+  }
+
+  /**
+    ABOUT PAGE STYLES
+  */
+  // Section: About main
+  #about-main {
+    padding: 1rem 2rem;
+  }
+
+  // Section: Attorneys
+  #attorneys {
+    .attorney {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  // Section: Testimonials
+  #testimonials {
+    .testimonials-wrapper {
+      .testimonial {
+        padding: 0.5rem 2rem;
+      }
+    }
+  }
+
+  /**
+    SHARED PRACTICE AREA PAGE STYLES
+  */
+  .practice-area-content-wrapper {
+    grid-template-areas: 
+      'main'
+      'sidebar';
+    grid-gap: 0;
+
+    div.card {
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+
+    #sidebar {
+      margin-top: 0;
+      justify-self: center;
+      text-align: center;
+    }
+  }
+
+  /**
+    MEDIA PAGE STYLES
+  */
+
+  // Section: YouTube Player
+  #youtube-player {
+    .container {
+      grid-template-areas:
+        'player'
+        'column-left'
+        'column-right';
+    }
+
+    #player {
+      width: 300px;
+      height: 183px;
+    }
+  }
+
+  // Section: News Articles
+  #news-articles {
+    .news-articles-grid {
+      .card-content {
+        h5 {
+          display: block;
+          font-size: 1.1rem;
+          color: #777;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  // Section: Academic and Professional Papers
+  #academic-papers {
+    .academic-papers-grid {
+      .academic-papers-grid-item {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #ccc;
+
+        h3 {
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  /**
+    CONTACT PAGE
+  */
+
+  // Section: Contact
+  #contact {
+    a {
+      color: set-text-color($primary-color);
+      text-decoration: underline;
+    }
+  }
+} 

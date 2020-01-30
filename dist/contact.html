@@ -14,14 +14,37 @@
 <body>
   <!-- Main Navbar -->
   <nav id="main-nav" class="py-1">
+
+    <!-- Hamburger Menu (Mobile Nav) -->
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler">
+      <div class="hamburger"><div></div></div>
+      <div class="menu">
+        <div>
+          <div>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="family-law.html">Family Law</a></li>
+              <li><a href="social-security-disability.html">Social Security &amp; Disability</a></li>
+              <li><a href="personal-injury.html">Personal Injury</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link List (Desktop Nav) -->
     <div class="container">
       <div class="nav-content text-center">
-        <div class="logo">
+        <h1 class="logo">
           <a href="index.html">
             <p class=""><span class="text-primary">Cynthia A.</span> Cheatham</p>
             <p>Family Law</p>
           </a>
-        </div>
+        </h1>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
@@ -91,12 +114,9 @@
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzIUPtclef3Rf-KW7H6YJ_PqMM5dE6QKM&callback=initMap"></script>
    
   <!-- Google Maps -->
-  <script>
-    function initMap() {
-      var lawOffice = { lat: 36.128852, lng: -86.802428 };
-      var map = new google.maps.Map(document.getElementById('map'), {zoom: 15, center: lawOffice});
-      var marker = new google.maps.Marker({ position: lawOffice, map: map });
-    }
-  </script>
+  <script src="js/map.js"></script>
+
+  <!-- Scroll Listener -->
+  <script src="js/scrollListener.js"></script>
 </body>
 </html>

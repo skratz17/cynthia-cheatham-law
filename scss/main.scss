@@ -34,7 +34,12 @@ h1, h2, h3, h4, h5, h6 {
 
 // Main nav
 #main-nav {
+  @import 'hamburger';
   background: #fff;
+
+  .menu-wrap {
+    display: none;
+  }
 
   .container {
     // necessary for dropdown
@@ -56,6 +61,11 @@ h1, h2, h3, h4, h5, h6 {
 
     ul {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      word-wrap: nowrap;
+      white-space: nowrap;
 
       li.dropdown span, li a {
         @extend %list-item-style;
@@ -140,11 +150,11 @@ h1, h2, h3, h4, h5, h6 {
       width: 100%;
       background: url('../img/showcase.jpg') no-repeat center center / cover;
       opacity: 0.5;
+      z-index: -1;
     }
 
     &-content {
       padding: 5rem;
-      z-index: 1
     }
   }
 }
@@ -181,9 +191,9 @@ h1, h2, h3, h4, h5, h6 {
       grid-column: 1 / span 3;
     }
 
-    .practice-area {
+    .practice-area-content {
+      height: 100%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       flex-direction: column;
 
@@ -200,6 +210,10 @@ h1, h2, h3, h4, h5, h6 {
           background: $secondary-color;
           transform: scale(1.05);
         }
+      }
+
+      div {
+        flex-grow: 1;
       }
 
       h3 {
@@ -234,6 +248,11 @@ h1, h2, h3, h4, h5, h6 {
   ABOUT PAGE STYLES
 */
 
+// Section: About Main
+#about-main {
+  padding: 2rem;
+}
+
 // Section: Attorneys
 #attorneys {
   background: $medium-color;
@@ -244,6 +263,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-gap: 1rem;
     background: $light-color;
     margin: 2rem 0;
+    padding: 1rem;
 
     &-img {
       width: 60%;
@@ -374,6 +394,8 @@ h1, h2, h3, h4, h5, h6 {
 
   #player {
     grid-area: player;
+    width: 640px;
+    height: 390px;
   }
 
   #column-right {
@@ -403,7 +425,12 @@ h1, h2, h3, h4, h5, h6 {
         height: 4rem;
       }
     }
+
     .card-content {
+      h5 {
+        display: none;
+      }
+
       .card-heading {
         line-height: 1.1;
         margin-bottom: 0.25rem;
@@ -431,7 +458,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/**
+  CONTACT PAGE
+*/
+
+// Section: Contact
 #contact {
+  background: $primary-color;
+  color: set-text-color($primary-color);
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 1rem;
@@ -453,3 +487,5 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+
+@import 'mobile';
