@@ -1,3 +1,28 @@
+// IPad Pro and Down
+@media(max-width: 1024px) {
+  // Section: Media Page YouTube Player
+  #youtube-player {
+    .container {
+      grid-template-areas:
+        'player player'
+        'column-left column-right';
+      grid-gap: 0;
+    }
+
+    .video-button-column {
+      justify-content: space-between;
+
+      .video-button {
+        width: 250px;
+      }
+    }
+
+    #player {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 // Tablets
 @media(max-width: 768px) {
   // grid resets
@@ -25,28 +50,6 @@
   #who {
     .who-img {
       display: none;
-    }
-  }
-
-  // Section: Media Page YouTube Player
-  #youtube-player {
-    .container {
-      grid-template-areas:
-        'player player'
-        'column-left column-right';
-      grid-gap: 0;
-    }
-
-    .video-button-column {
-      justify-content: space-between;
-
-      .video-button {
-        width: 250px;
-      }
-    }
-
-    #player {
-      margin-bottom: 1rem;
     }
   }
 
@@ -275,5 +278,12 @@
       color: set-text-color($primary-color);
       text-decoration: underline;
     }
+  }
+} 
+
+// Landscape
+@media(max-height: 500px) {
+  #main-nav .menu-wrap .menu > div > div > ul > li {
+    padding: 0.3rem;
   }
 } 

@@ -277,8 +277,8 @@ h1, h2, h3, h4, h5, h6 {
       #main-nav .menu-wrap .menu > div {
         background: rgba(24, 39, 51, 0.85);
         border-radius: 50%;
-        width: 200vw;
-        height: 200vw;
+        width: 300vw;
+        height: 300vw;
         display: flex;
         flex: none;
         align-items: center;
@@ -314,6 +314,12 @@ h1, h2, h3, h4, h5, h6 {
       #main-nav .menu-wrap .toggler:checked ~ .menu > div > div {
         opacity: 1;
         transition: opacity 0.4s ease 0.4s; }
+  #main-nav.mobile .menu-wrap {
+    display: block; }
+  #main-nav.mobile .nav-content {
+    justify-content: center; }
+    #main-nav.mobile .nav-content ul {
+      display: none; }
   #main-nav .menu-wrap {
     display: none; }
   #main-nav .container {
@@ -600,6 +606,17 @@ h1, h2, h3, h4, h5, h6 {
     #contact .contact-info > * {
       padding: 0.75rem; }
 
+@media (max-width: 1024px) {
+  #youtube-player .container {
+    grid-template-areas: 'player player' 'column-left column-right';
+    grid-gap: 0; }
+  #youtube-player .video-button-column {
+    justify-content: space-between; }
+    #youtube-player .video-button-column .video-button {
+      width: 250px; }
+  #youtube-player #player {
+    margin-bottom: 1rem; } }
+
 @media (max-width: 768px) {
   #who,
   #contact {
@@ -612,15 +629,6 @@ h1, h2, h3, h4, h5, h6 {
       display: none; }
   #who .who-img {
     display: none; }
-  #youtube-player .container {
-    grid-template-areas: 'player player' 'column-left column-right';
-    grid-gap: 0; }
-  #youtube-player .video-button-column {
-    justify-content: space-between; }
-    #youtube-player .video-button-column .video-button {
-      width: 250px; }
-  #youtube-player #player {
-    margin-bottom: 1rem; }
   #news-articles .news-articles-grid {
     text-align: center; }
     #news-articles .news-articles-grid .card-icon {
@@ -731,3 +739,7 @@ h1, h2, h3, h4, h5, h6 {
   #contact a {
     color: #fff;
     text-decoration: underline; } }
+
+@media (max-height: 500px) {
+  #main-nav .menu-wrap .menu > div > div > ul > li {
+    padding: 0.3rem; } }
