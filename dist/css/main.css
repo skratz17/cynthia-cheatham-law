@@ -649,6 +649,12 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr; }
   #main-nav .menu-wrap {
     display: block; }
+    #main-nav .menu-wrap label {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
   #main-nav .nav-content {
     justify-content: center; }
     #main-nav .nav-content ul {
@@ -771,7 +777,7 @@ h1, h2, h3, h4, h5, h6 {
   #news-articles .news-articles-grid .card-content h5 {
     display: block;
     font-size: 1.1rem;
-    color: #777;
+    color: #666;
     text-transform: uppercase; }
   #academic-papers .academic-papers-grid .academic-papers-grid-item {
     padding-bottom: 1.5rem;

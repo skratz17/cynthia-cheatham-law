@@ -58,6 +58,14 @@
   #main-nav {
     .menu-wrap {
       display: block;
+
+      label {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
     }
 
     .nav-content {
@@ -303,7 +311,7 @@
         h5 {
           display: block;
           font-size: 1.1rem;
-          color: #777;
+          color: #666;
           text-transform: uppercase;
         }
       }
