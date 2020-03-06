@@ -8,6 +8,20 @@
     }
   }
 
+  #header-main {
+    .showcase {
+      justify-content: flex-end;
+
+      &:before {
+        background: url("../img/homepage/showcase.jpg") no-repeat 30% 30% / cover;
+      }
+
+      &-content {
+        margin-right: 0;
+      }
+    }
+  }
+
   // Section: Media Page YouTube Player
   #youtube-player {
     .container {
@@ -35,6 +49,7 @@
 @media(max-width: 768px) {
   // grid resets
   #who,
+  #testimonials .testimonials-wrapper,
   #contact {
     grid-template-columns: 1fr;
   }
@@ -53,6 +68,9 @@
       }
     }
   }
+
+  #header-main .showcase .showcase-content h2 { font-size: 3.5rem; }
+  #header-main .showcase .showcase-content p { font-size: 1.6rem; }
 
   // Section: Homepage Who Are We
   #who {
@@ -76,6 +94,19 @@
           font-size: 1.1rem;
           color: #666;
           text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  // Section: Testimonials
+  #testimonials {
+    .testimonials-wrapper {
+      .testimonial {
+        border-bottom: 1px dotted #aaa;
+
+        &:last-child {
+          border-bottom: none;
         }
       }
     }
@@ -140,6 +171,23 @@
   /**
     HOMEPAGE STYLES
   */
+  #header-main {
+    .showcase {
+      height: 400px;
+
+      &:before {
+        background: url("../img/homepage/showcase.jpg") no-repeat center center / cover;
+      }
+      
+      &-content {
+        padding: 1rem;
+        max-width: 250px;
+      }
+    }
+  }
+
+  #header-main .showcase .showcase-content h2 { font-size: 2.5rem; }
+  #header-main .showcase .showcase-content p { font-size: 1.4rem; }
 
   // Section: Homepage Practice Areas
   #practice-areas {

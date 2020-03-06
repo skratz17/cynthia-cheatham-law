@@ -176,7 +176,8 @@
   padding: 1rem; }
   .card > *:first-child {
     flex: 1;
-    margin-right: 0.5rem; }
+    margin-right: 0.5rem;
+    padding: 1rem 1rem 0 0; }
   .card > *:last-child {
     flex: 9; }
   .card .card-text {
@@ -378,9 +379,9 @@ h1, h2, h3, h4, h5, h6 {
 */
 #header-main .showcase {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center; }
   #header-main .showcase:before {
     content: '';
@@ -389,11 +390,17 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     height: 100%;
     width: 100%;
-    background: url("../img/showcase.jpg") no-repeat center center/cover;
+    background: url("../img/homepage/showcase.jpg") no-repeat center 30%/cover;
     opacity: 0.5;
     z-index: -1; }
   #header-main .showcase-content {
-    padding: 5rem; }
+    max-width: 450px;
+    margin-right: 8rem;
+    padding: 3rem 1rem; }
+    #header-main .showcase-content > h2 {
+      font-size: 4.5rem; }
+    #header-main .showcase-content > p {
+      font-size: 2rem; }
 
 #who {
   background: #355e3b;
@@ -405,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
   #who .who-text p {
     margin: 0.75rem 0; }
   #who .who-img {
-    background: url("../img/TEST2.jpg") no-repeat center center/cover;
+    background: url("../img/homepage/office.jpg") no-repeat center center/cover;
     height: 100%; }
 
 #practice-areas .container {
@@ -462,12 +469,13 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-gap: 1rem;
-    align-items: center;
+    align-items: top;
     background: #f4f4f4;
     margin: 2rem 0;
     padding: 1rem; }
     #attorneys .attorney-img {
-      width: 60%;
+      width: 200px;
+      height: 200px;
       display: block;
       margin: 0.5rem auto;
       border-radius: 50%; }
@@ -612,10 +620,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem; }
     #contact .contact-info > * {
       padding: 0.75rem; }
+    #contact .contact-info a {
+      color: #fff; }
 
 @media (max-width: 1024px) {
   #main-nav .nav-content .logo {
     max-width: 300px; }
+  #header-main .showcase {
+    justify-content: flex-end; }
+    #header-main .showcase:before {
+      background: url("../img/homepage/showcase.jpg") no-repeat 30% 30%/cover; }
+    #header-main .showcase-content {
+      margin-right: 0; }
   #youtube-player .container {
     grid-template-areas: 'player player' 'column-left column-right';
     grid-gap: 0; }
@@ -628,6 +644,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   #who,
+  #testimonials .testimonials-wrapper,
   #contact {
     grid-template-columns: 1fr; }
   #main-nav .menu-wrap {
@@ -636,6 +653,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center; }
     #main-nav .nav-content ul {
       display: none; }
+  #header-main .showcase .showcase-content h2 {
+    font-size: 3.5rem; }
+  #header-main .showcase .showcase-content p {
+    font-size: 1.6rem; }
   #who .who-img {
     display: none; }
   #news-articles .news-articles-grid {
@@ -646,7 +667,11 @@ h1, h2, h3, h4, h5, h6 {
       display: block;
       font-size: 1.1rem;
       color: #666;
-      text-transform: uppercase; } }
+      text-transform: uppercase; }
+  #testimonials .testimonials-wrapper .testimonial {
+    border-bottom: 1px dotted #aaa; }
+    #testimonials .testimonials-wrapper .testimonial:last-child {
+      border-bottom: none; } }
 
 @media (max-width: 500px) {
   .l-heading {
@@ -681,6 +706,17 @@ h1, h2, h3, h4, h5, h6 {
   /**
     HOMEPAGE STYLES
   */
+  #header-main .showcase {
+    height: 400px; }
+    #header-main .showcase:before {
+      background: url("../img/homepage/showcase.jpg") no-repeat center center/cover; }
+    #header-main .showcase-content {
+      padding: 1rem;
+      max-width: 250px; }
+  #header-main .showcase .showcase-content h2 {
+    font-size: 2.5rem; }
+  #header-main .showcase .showcase-content p {
+    font-size: 1.4rem; }
   #practice-areas .container .practice-area {
     border-bottom: 1px solid #ccc;
     padding-bottom: 2rem; }
