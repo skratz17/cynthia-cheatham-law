@@ -1,5 +1,13 @@
 // IPad Pro and Down
 @media(max-width: 1024px) {
+  #main-nav {
+    .nav-content {
+      .logo {
+        max-width: 300px;
+      }
+    }
+  }
+
   // Section: Media Page YouTube Player
   #youtube-player {
     .container {
@@ -66,7 +74,7 @@
         h5 {
           display: block;
           font-size: 1.1rem;
-          color: #777;
+          color: #666;
           text-transform: uppercase;
         }
       }
