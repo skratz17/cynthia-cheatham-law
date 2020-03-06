@@ -472,7 +472,8 @@ h1, h2, h3, h4, h5, h6 {
     align-items: top;
     background: #f4f4f4;
     margin: 2rem 0;
-    padding: 1rem; }
+    padding: 1rem;
+    box-shadow: 2px 2px 5px 1px #999; }
     #attorneys .attorney-img {
       width: 200px;
       height: 200px;
