@@ -300,7 +300,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 2px 2px 5px 1px #999;
 
     &-img {
-      // width: 60%;
       width: 200px;
       height: 200px;
       display: block;
@@ -311,7 +310,7 @@ h1, h2, h3, h4, h5, h6 {
     &-content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;;
       align-items: center;
 
       h3 {
