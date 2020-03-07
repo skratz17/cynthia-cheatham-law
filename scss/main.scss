@@ -39,6 +39,14 @@ h1, h2, h3, h4, h5, h6 {
   &.mobile {
     .menu-wrap {
       display: block;
+
+      label {
+        position: absolute;
+        left: -10000px;
+        width: 1px; 
+        height: 1px;
+        overflow: hidden;
+      }
     }
 
     .nav-content {

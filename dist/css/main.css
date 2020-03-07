@@ -317,6 +317,12 @@ h1, h2, h3, h4, h5, h6 {
         transition: opacity 0.4s ease 0.4s; }
   #main-nav.mobile .menu-wrap {
     display: block; }
+    #main-nav.mobile .menu-wrap label {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
   #main-nav.mobile .nav-content {
     justify-content: center; }
     #main-nav.mobile .nav-content ul {
@@ -625,6 +631,12 @@ h1, h2, h3, h4, h5, h6 {
       color: #fff; }
 
 @media (max-width: 1024px) {
+  #main-nav .menu-wrap label {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden; }
   #main-nav .nav-content .logo {
     max-width: 300px; }
   #header-main .showcase {
@@ -650,12 +662,6 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr; }
   #main-nav .menu-wrap {
     display: block; }
-    #main-nav .menu-wrap label {
-      position: absolute;
-      left: -10000px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden; }
   #main-nav .nav-content {
     justify-content: center; }
     #main-nav .nav-content ul {

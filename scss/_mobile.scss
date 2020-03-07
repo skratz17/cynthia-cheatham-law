@@ -1,6 +1,16 @@
 // IPad Pro and Down
 @media(max-width: 1024px) {
   #main-nav {
+    .menu-wrap {
+      label {
+        position: absolute;
+        left: -10000px;
+        width: 1px; 
+        height: 1px;
+        overflow: hidden;
+      }
+    }
+
     .nav-content {
       .logo {
         max-width: 300px;
@@ -58,14 +68,6 @@
   #main-nav {
     .menu-wrap {
       display: block;
-
-      label {
-        position: absolute;
-        left: -10000px;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
     }
 
     .nav-content {
