@@ -9,7 +9,8 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
     width: '640',
-    videoId: '5Cl6AXq2DpA'
+    videoId: '5Cl6AXq2DpA',
+    host: 'https://www.youtube.com'
   });
 }
 
