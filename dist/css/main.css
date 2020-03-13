@@ -371,12 +371,15 @@ h1, h2, h3, h4, h5, h6 {
   background: #f4f4f4;
   padding-bottom: 0.2rem; }
   #main-footer .footer-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     text-align: center; }
+    #main-footer .footer-content div {
+      flex: 1;
+      padding: 0.5rem; }
     #main-footer .footer-content div:last-child {
-      grid-column: 1 / span 3; }
+      flex: 100%; }
     #main-footer .footer-content h3 {
       margin: 0.5rem 0; }
 
@@ -411,28 +414,41 @@ h1, h2, h3, h4, h5, h6 {
 #who {
   background: #355e3b;
   color: #fff;
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-gap: 1rem;
+  display: flex;
   align-items: center; }
-  #who .who-text p {
-    margin: 0.75rem 0; }
+  #who .who-text {
+    flex: 2; }
+    #who .who-text p {
+      margin: 0.75rem 0; }
   #who .who-img {
+    flex: 3;
     background: url("../img/homepage/office.jpg") no-repeat center center/cover;
-    height: 100%; }
+    height: 100%;
+    display: none; }
+  @supports (display: grid) {
+    #who {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      grid-gap: 1rem; }
+      #who .who-img {
+        display: block; } }
 
 #practice-areas .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem; }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
   #practice-areas .container *:first-child {
-    grid-column: 1 / span 3; }
+    flex: 100%; }
+  #practice-areas .container .practice-area {
+    flex: 1;
+    padding: 0.5rem; }
   #practice-areas .container .practice-area-content {
     height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column; }
     #practice-areas .container .practice-area-content i {
+      flex: 0 0;
       color: #fff;
       background: #355e3b;
       border-radius: 50%;
@@ -452,11 +468,9 @@ h1, h2, h3, h4, h5, h6 {
 
 #credentials {
   background: #ccc;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 1rem;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center; }
   #credentials .credential img {
     width: 60%; }
@@ -472,10 +486,9 @@ h1, h2, h3, h4, h5, h6 {
 #attorneys {
   background: #ccc; }
   #attorneys .attorney {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 1rem;
-    align-items: top;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     background: #f4f4f4;
     margin: 2rem 0;
     padding: 1rem;
@@ -500,6 +513,13 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 1rem; }
         #attorneys .attorney-content p:last-child {
           margin-bottom: 0; }
+    @supports (display: grid) {
+      #attorneys .attorney {
+        text-align: left;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 1rem;
+        align-items: top; } }
 
 #testimonials {
   background: #355e3b;
@@ -507,9 +527,8 @@ h1, h2, h3, h4, h5, h6 {
   #testimonials h2 {
     padding-top: 1rem; }
   #testimonials .testimonials-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem; }
+    display: flex;
+    justify-content: space-evenly; }
     #testimonials .testimonials-wrapper .testimonial {
       position: relative;
       padding: 2rem;
@@ -532,17 +551,28 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff; }
 
 .practice-area-content-wrapper {
-  display: grid;
-  grid-template-areas: 'main main sidebar' 'main main sidebar';
-  grid-gap: 2rem; }
+  display: flex; }
   .practice-area-content-wrapper #family-law, .practice-area-content-wrapper #social-security-disability, .practice-area-content-wrapper #personal-injury {
-    grid-area: main; }
+    flex: 2;
+    margin-right: 1rem; }
   .practice-area-content-wrapper #sidebar {
-    grid-area: sidebar;
+    flex: 1;
     margin-top: 1.5rem;
     max-width: 250px; }
   .practice-area-content-wrapper div.card {
     margin: 2rem 0; }
+  @supports (display: grid) {
+    .practice-area-content-wrapper {
+      display: grid;
+      grid-template-areas: 'main main sidebar' 'main main sidebar';
+      grid-gap: 2rem; }
+      .practice-area-content-wrapper #family-law, .practice-area-content-wrapper #social-security-disability, .practice-area-content-wrapper #personal-injury {
+        flex: 0;
+        margin-right: 0;
+        grid-area: main; }
+      .practice-area-content-wrapper #sidebar {
+        flex: 0;
+        grid-area: sidebar; } }
 
 /**
   MEDIA PAGE STYLES
@@ -560,22 +590,29 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.75rem; }
 
 #youtube-player .container {
-  display: grid;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  grid-gap: 1rem;
-  grid-template-areas: 'column-left player column-right'; }
-
-#youtube-player #column-left {
-  grid-area: column-left; }
+  align-items: flex-start; }
+  @supports (display: grid) {
+    #youtube-player .container {
+      display: grid;
+      align-items: center;
+      grid-gap: 1rem;
+      grid-template-areas: 'column-left player column-right'; } }
 
 #youtube-player #player {
-  grid-area: player;
   width: 640px;
-  height: 390px; }
+  height: 390px;
+  margin: 0 0.5rem; }
 
-#youtube-player #column-right {
-  grid-area: column-right; }
+@supports (display: grid) {
+  #youtube-player #column-left {
+    grid-area: column-left; }
+  #youtube-player #player {
+    grid-area: player;
+    margin: 0; }
+  #youtube-player #column-right {
+    grid-area: column-right; } }
 
 #news-articles {
   background-color: #355e3b;
@@ -583,9 +620,12 @@ h1, h2, h3, h4, h5, h6 {
   #news-articles h2 {
     margin-bottom: 1.25rem; }
   #news-articles .news-articles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3rem; }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+    #news-articles .news-articles-grid .card {
+      flex: 45%;
+      margin: 1rem; }
     #news-articles .news-articles-grid .card-icon {
       align-self: flex-start; }
       #news-articles .news-articles-grid .card-icon img {
@@ -600,9 +640,11 @@ h1, h2, h3, h4, h5, h6 {
       margin-bottom: 0.7rem; }
 
 #academic-papers .academic-papers-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem; }
+  display: flex;
+  flex-wrap: wrap; }
+  #academic-papers .academic-papers-grid .academic-papers-grid-item {
+    flex: 50%;
+    padding: 1rem; }
 
 #academic-papers .list li {
   padding: 0.6rem; }
@@ -613,13 +655,13 @@ h1, h2, h3, h4, h5, h6 {
 #contact {
   background: #355e3b;
   color: #fff;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 1rem; }
+  display: flex; }
   #contact .map {
-    height: 500px;
+    flex: 2;
+    min-height: 500px;
     width: 100%; }
   #contact .contact-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -646,8 +688,8 @@ h1, h2, h3, h4, h5, h6 {
     #header-main .showcase-content {
       margin-right: 0; }
   #youtube-player .container {
-    grid-template-areas: 'player player' 'column-left column-right';
-    grid-gap: 0; }
+    flex-direction: column;
+    align-items: center; }
   #youtube-player .video-button-column {
     justify-content: space-between; }
     #youtube-player .video-button-column .video-button {
@@ -656,10 +698,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem; } }
 
 @media (max-width: 768px) {
-  #who,
   #testimonials .testimonials-wrapper,
   #contact {
-    grid-template-columns: 1fr; }
+    flex-direction: column; }
   #main-nav .menu-wrap {
     display: block; }
   #main-nav .nav-content {
@@ -701,17 +742,15 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden; }
   #main-footer .footer-content,
   #practice-areas .container,
-  #testimonials .testimonials-wrapper,
-  #attorneys .attorney,
-  #news-articles .news-articles-grid,
+  #news-articles, .news-articles-grid,
   #academic-papers .academic-papers-grid {
-    grid-template-columns: 1fr; }
-  #main-footer .footer-content div:last-child,
-  #practice-areas .container *:first-child {
-    grid-column: 1; }
+    flex-direction: column;
+    flex-wrap: nowrap; }
   #main-footer .footer-content div {
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid #ccc; }
+  #main-footer .footer-content div:first-child {
+    padding-top: 0; }
   #main-footer .footer-content div:last-child {
     border-bottom: none; }
   #main-footer .footer-content a {
@@ -746,9 +785,12 @@ h1, h2, h3, h4, h5, h6 {
       margin: 0 auto;
       grid-column: 2; }
   #credentials {
-    grid-template-columns: repeat(3, 1fr); }
-    #credentials .credential img {
-      width: 50%; }
+    flex-wrap: wrap; }
+    #credentials .credential {
+      flex: 33%;
+      margin: 0.5rem 0; }
+      #credentials .credential img {
+        width: 50%; }
   /**
     ABOUT PAGE STYLES
   */
@@ -759,13 +801,13 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     text-align: center; }
   #testimonials .testimonials-wrapper .testimonial {
-    padding: 0.5rem 2rem; }
+    padding: 1.5rem 2rem; }
   /**
     SHARED PRACTICE AREA PAGE STYLES
   */
   .practice-area-content-wrapper {
-    grid-template-areas: 'main' 'sidebar';
-    grid-gap: 0; }
+    flex-direction: column;
+    align-items: center; }
     .practice-area-content-wrapper div.card {
       margin: 0;
       margin-bottom: 1rem; }

@@ -35,10 +35,15 @@
   // Section: Media Page YouTube Player
   #youtube-player {
     .container {
-      grid-template-areas:
+      flex-direction: column;
+      align-items: center;
+
+      @supports(display: grid) {
+        grid-template-areas:
         'player player'
         'column-left column-right';
-      grid-gap: 0;
+        grid-gap: 0;
+      }
     }
 
     .video-button-column {
@@ -57,11 +62,17 @@
 
 // Tablets
 @media(max-width: 768px) {
-  // grid resets
-  #who,
+  // Stack things where grid isn't supported
   #testimonials .testimonials-wrapper,
   #contact {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  // grid resets
+  @supports(display: grid) {
+    #who {
+      grid-template-columns: 1fr;
+    }
   }
 
   // Section: Main Nav
@@ -144,28 +155,31 @@
     }
   }
 
-  // Stack grids
+  // Stack things that aren't grids
   #main-footer .footer-content,
   #practice-areas .container,
-  #testimonials .testimonials-wrapper,
-  #attorneys .attorney,
-  #news-articles .news-articles-grid,
+  #news-articles, .news-articles-grid,
   #academic-papers .academic-papers-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
-  // Reset grid column overrides
-  #main-footer .footer-content div:last-child,
-  #practice-areas .container *:first-child {
-    grid-column: 1;
-  }
+  // Stack grids
+  @supports(display: grid) {
+    #attorneys .attorney {
+      grid-template-columns: 1fr;
+    }
 
   // Main footer
   #main-footer {
     .footer-content {
       div {
-        padding-bottom: 1rem;
+        padding: 1rem 0;
         border-bottom: 1px solid #ccc;
+      }
+
+      div:first-child {
+        padding-top: 0;
       }
 
       div:last-child {
@@ -231,9 +245,12 @@
 
   // Section: Homepage Credentials
   #credentials {
-    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
 
     .credential {
+      flex: 33%;
+      margin: 0.5rem 0;
+
       img {
         width: 50%;
       }
@@ -261,7 +278,7 @@
   #testimonials {
     .testimonials-wrapper {
       .testimonial {
-        padding: 0.5rem 2rem;
+        padding: 1.5rem 2rem;
       }
     }
   }
@@ -270,10 +287,8 @@
     SHARED PRACTICE AREA PAGE STYLES
   */
   .practice-area-content-wrapper {
-    grid-template-areas: 
-      'main'
-      'sidebar';
-    grid-gap: 0;
+    flex-direction: column;
+    align-items: center;
 
     div.card {
       margin: 0;
@@ -284,6 +299,13 @@
       margin-top: 0;
       justify-self: center;
       text-align: center;
+    }
+
+    @supports(display: grid) {
+      grid-template-areas: 
+      'main'
+      'sidebar';
+      grid-gap: 0;
     }
   }
 
