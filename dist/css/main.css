@@ -332,6 +332,9 @@ h1, h2, h3, h4, h5, h6 {
   #main-nav .container {
     overflow: visible; }
   #main-nav .nav-content {
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: center;
     display: flex;
     justify-content: space-between;
     align-items: center; }
@@ -340,6 +343,9 @@ h1, h2, h3, h4, h5, h6 {
       #main-nav .nav-content .logo p:last-child {
         font-size: 1.5rem; }
     #main-nav .nav-content ul {
+      display: -webkit-flex;
+      -webkit-justify-content: space-between;
+      -webkit-align-items: center;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -690,6 +696,10 @@ h1, h2, h3, h4, h5, h6 {
   #youtube-player .container {
     flex-direction: column;
     align-items: center; }
+    @supports (display: grid) {
+      #youtube-player .container {
+        grid-template-areas: 'player player' 'column-left column-right';
+        grid-gap: 0; } }
   #youtube-player .video-button-column {
     justify-content: space-between; }
     #youtube-player .video-button-column .video-button {
@@ -701,6 +711,9 @@ h1, h2, h3, h4, h5, h6 {
   #testimonials .testimonials-wrapper,
   #contact {
     flex-direction: column; }
+  @supports (display: grid) {
+    #who {
+      grid-template-columns: 1fr; } }
   #main-nav .menu-wrap {
     display: block; }
   #main-nav .nav-content {
@@ -746,6 +759,9 @@ h1, h2, h3, h4, h5, h6 {
   #academic-papers .academic-papers-grid {
     flex-direction: column;
     flex-wrap: nowrap; }
+  @supports (display: grid) {
+    #attorneys .attorney {
+      grid-template-columns: 1fr; } }
   #main-footer .footer-content div {
     padding: 1rem 0;
     border-bottom: 1px solid #ccc; }
@@ -815,6 +831,10 @@ h1, h2, h3, h4, h5, h6 {
       margin-top: 0;
       justify-self: center;
       text-align: center; }
+    @supports (display: grid) {
+      .practice-area-content-wrapper {
+        grid-template-areas: 'main' 'sidebar';
+        grid-gap: 0; } }
   /**
     MEDIA PAGE STYLES
   */
