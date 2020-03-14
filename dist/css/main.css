@@ -238,7 +238,7 @@ ul {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
-/**
+/** 
   SHARED COMPONENT STYLES
 */
 #main-nav {
@@ -682,9 +682,9 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-box-shadow: 2px 2px 5px 1px #999;
             box-shadow: 2px 2px 5px 1px #999; }
     #attorneys .attorney-img {
+      display: block;
       width: 200px;
       height: 200px;
-      display: block;
       margin: 0.5rem auto;
       border-radius: 50%; }
     #attorneys .attorney-content {
@@ -719,13 +719,15 @@ h1, h2, h3, h4, h5, h6 {
         text-align: left;
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: 1fr 1rem 3fr;
-        grid-template-columns: 1fr 3fr;
+        -ms-grid-columns: minmax(0, 1fr) 1rem 3fr;
+        grid-template-columns: minmax(0, 1fr) 3fr;
         grid-gap: 1rem;
         -webkit-box-align: top;
         -webkit-align-items: top;
             -ms-flex-align: top;
-                align-items: top; } }
+                align-items: top;
+        min-width: 0;
+        min-height: 0; } }
 
 #testimonials {
   background: #355e3b;
@@ -1031,6 +1033,10 @@ h1, h2, h3, h4, h5, h6 {
       background: url("../img/homepage/showcase.jpg") no-repeat 30% 30%/cover; }
     #header-main .showcase-content {
       margin-right: 0; }
+  @supports ((display: -ms-grid) or (display: grid)) {
+    #attorneys .attorney {
+      -ms-grid-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr); } }
   #youtube-player .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1121,10 +1127,6 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap; }
-  @supports ((display: -ms-grid) or (display: grid)) {
-    #attorneys .attorney {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr; } }
   #main-footer .footer-content div {
     padding: 1rem 0;
     border-bottom: 1px solid #ccc; }
@@ -1260,4 +1262,3 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-height: 500px) {
   #main-nav .menu-wrap .menu > div > div > ul > li {
     padding: 0.3rem; } }
-

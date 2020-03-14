@@ -32,6 +32,13 @@
     }
   }
 
+  // Section: Attorneys
+  @supports(display: grid) {
+    #attorneys .attorney {
+      grid-template-columns: minmax(0, 1fr);
+    } 
+  }
+
   // Section: Media Page YouTube Player
   #youtube-player {
     .container {
@@ -162,13 +169,6 @@
   #academic-papers .academic-papers-grid {
     flex-direction: column;
     flex-wrap: nowrap;
-  }
-
-  // Stack grids
-  @supports(display: grid) {
-    #attorneys .attorney {
-      grid-template-columns: 1fr;
-    } 
   }
 
   // Main footer
