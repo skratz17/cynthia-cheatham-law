@@ -416,7 +416,7 @@ h1, h2, h3, h4, h5, h6 {
 .practice-area-content-wrapper {
   display: flex;
 
-  #family-law, #social-security-disability, #personal-injury {
+  #family-law, #probate, #personal-injury {
     flex: 2;
     margin-right: 1rem;
   }
@@ -438,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
       'main main sidebar';
     grid-gap: 2rem;
 
-    #family-law, #social-security-disability, #personal-injury {
+    #family-law, #probate, #personal-injury {
       flex: 0;
       margin-right: 0;
       grid-area: main;
@@ -485,6 +485,12 @@ h1, h2, h3, h4, h5, h6 {
       grid-template-areas:
         'column-left player column-right';
     }
+  }
+
+  .recusal-text {
+    max-width: $max-width;
+    margin: 0 auto;
+    margin-top: 0.5rem;
   }
 
   #player {
@@ -558,11 +564,17 @@ h1, h2, h3, h4, h5, h6 {
 #academic-papers {
   .academic-papers-grid {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     
     .academic-papers-grid-item {
       flex: 50%;
+      flex-grow: 0;
       padding: 1rem;
+
+      a {
+        padding: 0;
+      }
     }
   }
 

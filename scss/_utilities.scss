@@ -11,9 +11,7 @@
 .text-medium { color: $medium-color; }
 .text-dark { color: $dark-color; }
 
-.italics {
-  font-style: italic;
-}
+.italics { font-style: italic; }
 
 .current {
   background-color: $secondary-color;
@@ -23,10 +21,11 @@
 .l-heading { font-size: 3.5rem; }
 .m-heading { font-size: 2rem; }
 .s-heading { font-size: 1.5rem; }
+.lead { font-size: 1.6rem; }
 
-.lead {
-  font-size: 1.6rem;
-}
+.text-center { text-align: center; }
+
+.nodisplay { display: none; }
 
 %btn-shared {
   display: inline-block;
@@ -68,10 +67,6 @@
     background: #e4e4e4;
     color: set-text-color(#e4e4e4);
   }
-}
-
-.text-center {
-  text-align: center;
 }
 
 .px-1 { padding: 0 1rem; }

@@ -30,5 +30,8 @@ buttons.forEach(function(b) {
 
     b.classList.remove('btn-dark');
     b.classList.add('btn-medium');
+
+    var recusalText = document.querySelector('.recusal-text');
+    b.dataset.trigger === 'recusal' ? recusalText.classList.remove('nodisplay') : recusalText.classList.add('nodisplay');
   }
 });
